@@ -3,13 +3,9 @@ var http=require("http"),
 
 http.createServer(function(req,res){
     fs.readFile("./index.html",function(err,html){
-        var i=0;
-        while(true){
-            i++;
-            res.write(i+"");
-        }
-            
-          
+            res.writeHead(200,{"Content-type":"application/json"})
+            res.write(JSON.stringify({nombre:"Juan",Username:"Antonio"}));
+            res.end();  
     });
 }).listen(8080)
 
