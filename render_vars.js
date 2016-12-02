@@ -6,8 +6,14 @@ http.createServer(function(req,res){
         var html_string=html.toString();
         var variables=html_string.match(/[^\{\}]+(?=\})/g);
         var nombre="Antonio";
+        //variable['nombre']
+        for(var i=variables.length-1;i>=0;i++)
+        {
+            var value=eval(variables[i]);
+            html_string=html_string.replace("{"+variables[i]+"}",value);
+        }
             res.writeHead(200,{"Content-type":"text/html"})
-            res.write(html);
+            res.write(html_string);
             res.end();  
     });
 }).listen(8080)
