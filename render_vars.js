@@ -5,7 +5,7 @@ http.createServer(function(req,res){
     fs.readFile("./index.html",function(err,html){
         var html_string=html.toString();
         var variables=html_string.match(/[^\{\}]+(?=\})/g);
-        var nombre="Antonio";
+        var nombre="ESto es una prueba de varibales";
         //variable['nombre']
         for(var i=variables.length-1;i>=0;i++)
         {
