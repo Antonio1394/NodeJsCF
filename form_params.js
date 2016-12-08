@@ -2,11 +2,21 @@ var http=require("http"),
     fs=require("fs");
 
 http.createServer(function(req,res){
+
+    if(req.url.indexOf("favicon.ico")>0){return;}
     fs.readFile("./index.html",function(err,html){
         var html_string=html.toString();
+        var arreglo_parametros=[];
         var variables=html_string.match(/[^\{\}]+(?=\})/g);
-        var nombre="ESto es una prueba de varibales";
-        //variable['nombre']
+        var nombre="";
+        if(req.url.indexOf("?")>0){
+            var url_data=req.url.split("?");
+            var arreglo_parametros=url_data[1].split("&");
+
+        }
+
+        
+        
         for(var i=variables.length-1;i>=0;i--)
         {
             var value=eval(variables[i]);
