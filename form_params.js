@@ -15,7 +15,9 @@ http.createServer(function(req,res){
 
         }
 
-        
+        for(var i=arreglo_parametros.length-1;i>=0;i--){
+            var parametro =arreglo_parametros[i];
+        };
         
         for(var i=variables.length-1;i>=0;i--)
         {
