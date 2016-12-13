@@ -24,8 +24,8 @@ http.createServer(function(req,res){
         
         for(var i=variables.length-1;i>=0;i--)
         {
-            var value=variables[i];
-            html_string=html_string.replace("{"+variables[i]+"}",parametro[variables[i]]);
+            var variable=variables[i];
+            html_string=html_string.replace("{"+variables[i]+"}",parametros[variable]);
         }
             res.writeHead(200,{"Content-type":"text/html"})
             res.write(html_string);
