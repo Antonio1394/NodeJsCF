@@ -19,13 +19,13 @@ http.createServer(function(req,res){
             var parametro =arreglo_parametros[i];
             var param_data=parametro.split("=");
             parametros[param_data[0]=param_data[1]];
-            eval
+            
         };
         
         for(var i=variables.length-1;i>=0;i--)
         {
-            var value=eval(variables[i]);
-            html_string=html_string.replace("{"+variables[i]+"}",value);
+            var value=variables[i];
+            html_string=html_string.replace("{"+variables[i]+"}",parametro[variables[i]]);
         }
             res.writeHead(200,{"Content-type":"text/html"})
             res.write(html_string);
