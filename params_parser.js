@@ -15,3 +15,5 @@ function parse(req){
 
         return parametros;
 }
+
+module.exports.parse=parse;

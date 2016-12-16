@@ -1,5 +1,8 @@
 var http=require("http"),
-    fs=require("fs");
+    fs=require("fs"),
+    parser=require("./params_parser.js");
+
+var p=parser.parse
 
 http.createServer(function(req,res){
 
@@ -9,6 +12,8 @@ http.createServer(function(req,res){
        
         var variables=html_string.match(/[^\{\}]+(?=\})/g);
         var nombre="";
+
+        var parametros=p(req);
         
 
        
