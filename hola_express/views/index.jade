@@ -4,4 +4,7 @@ html
     body
         - var arreglo=[1,2,3,4,5];
         - for (var i=arreglo.length-1;i>=0;i--)
-            p!="<h1>"+arreglo[i]+"</h1>"
+            //p!="<h1>"+arreglo[i]+"</h1>"
+            //p Hola #{arreglo[i]+1} interpolacion
+            p.
+             Hola haz click en #[a(href="codigofacilito.com") este link] por favor
