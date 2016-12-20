@@ -3,8 +3,17 @@ html
         title Mi Primera Pagina con Web
     body
         - var arreglo=[1,2,3,4,5];
-        - for (var i=arreglo.length-1;i>=0;i--)
+        //if true
             //p!="<h1>"+arreglo[i]+"</h1>"
             //p Hola #{arreglo[i]+1} interpolacion
             p.
              Hola haz click en #[a(href="codigofacilito.com") este link] por favor
+        each item in arreglo
+            p=item
+            case item
+                when 1
+                    p El item era uno
+                when 2
+                    p El item era dos
+                default
+                    p El item no era ni uno ni dos
