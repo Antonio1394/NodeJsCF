@@ -8,4 +8,8 @@ app.get("/",function(req,res){
     res.render("index");
 });
 
+app.post("/",function(req,res){
+    res.render("form")
+});
+
 app.listen(8080);
