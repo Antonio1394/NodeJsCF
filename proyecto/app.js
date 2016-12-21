@@ -3,11 +3,11 @@ var express = require("express");
 var app=express();
 app.set("view engine", "jade");
 
-app.get("7",function(req,res){
+app.get("/",function(req,res){
    res.render("index");
 });
 
-app.get("7login",function(req,res){
+app.get("/login",function(req,res){
    res.render("login");
 });
 
