@@ -1,6 +1,10 @@
 var express = require("express");
 var bodyParser=require("body-parser");
 var app=express();
+var mongoose=require("mongoose");
+
+mongoose.connect("mongodb://localhost/fotos");
+
 
 app.use("/public",express.static('public'));
 
