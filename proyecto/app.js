@@ -3,7 +3,7 @@ var bodyParser=require("body-parser");
 var app=express();
 var mongoose=require("mongoose");
 
-mongoose.connect("mongodb://localhost/fotos");
+mongoose.connect("mongodb://192.168.10.10/fotos");
 
 var userSchemaJSON={
     email:String,
