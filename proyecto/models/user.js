@@ -13,9 +13,9 @@ var user_schema=new Schema({
 });
 
 user_schema.virtual("password_confirmation").get(function(){
-    return this.password_confirmation;
+    return this.p_c;
 }).set(function(password){
-    this.password_confirmation=password;
+    this.p_c=password;
 });
 
 var User=mongoose.model("User",user_schema);

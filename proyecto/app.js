@@ -31,6 +31,7 @@ app.post("/users",function(req,res){
                        password: req.body.password,
                        password_confirmation: req.body.password_confirmation
                     });
+    console.log(user.password_confirmation);
 
     user.save(function(){
         res.send("recibimos tus datos");
