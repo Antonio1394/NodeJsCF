@@ -12,6 +12,12 @@ var user_schema=new Schema({
     date_of_birth:Date
 });
 
+user_schema.virtual("password_confirmation").get(function(){
+    return this.password_confirmation;
+}).set(function(password){
+    this.password_confirmation=password;
+});
+
 var User=mongoose.model("User",user_schema);
 
 module.exports.User=User;
