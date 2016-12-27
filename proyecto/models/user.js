@@ -3,13 +3,17 @@ var Schema=mongoose.Schema;
 
 mongoose.connect("mongodb://localhost/fotos");
 
+var posibles_valores=["M","F"];
+
 var user_schema=new Schema({
     name:String,
-    username:String,
-    password:String,
-    age:{type:Number, min:5,max:100},
+    last_name: String,
+    username:{type:String,maxlength:[50,"Usuario muy grande"]},
+    password:{type:String,minlength:[8, "el passwor es muy corto"]},
+    age:{type:Number, min:[5,"La edad no puede ser menor a 5"],max:[100,"la edad no puede ser mayr  a 100"]},
     email:{type:String,required:"El correo es Obligatorio"},
-    date_of_birth:Date
+    date_of_birth:Date,
+    sex:{type:String, enum:{values:posibles_valores,message:"Opcion invalida"}}
 });
 
 user_schema.virtual("password_confirmation").get(function(){
