@@ -4,14 +4,14 @@ var Schema=mongoose.Schema;
 mongoose.connect("mongodb://localhost/fotos");
 
 var posibles_valores=["M","F"];
-
+var email_match=[/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,"Coloca un email valido"];
 var user_schema=new Schema({
     name:String,
     last_name: String,
     username:{type:String,maxlength:[50,"Usuario muy grande"]},
     password:{type:String,minlength:[8, "el passwor es muy corto"]},
     age:{type:Number, min:[5,"La edad no puede ser menor a 5"],max:[100,"la edad no puede ser mayr  a 100"]},
-    email:{type:String,required:"El correo es Obligatorio"},
+    email:{type:String,required:"El correo es Obligatorio",match:email_match},
     date_of_birth:Date,
     sex:{type:String, enum:{values:posibles_valores,message:"Opcion invalida"}}
 });
