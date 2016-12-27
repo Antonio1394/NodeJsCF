@@ -7,8 +7,8 @@ var user_schema=new Schema({
     name:String,
     username:String,
     password:String,
-    age:Number,
-    email:String,
+    age:{type:Number, min:5,max:100},
+    email:{type:String,required:"El correo es Obligatorio"},
     date_of_birth:Date
 });
 
