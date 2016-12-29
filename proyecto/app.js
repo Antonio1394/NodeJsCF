@@ -27,7 +27,7 @@ app.get("/login",function(req,res){
 });
 
 app.post("/users",function(req,res){
-    
+
     var user=new User({
                        email: req.body.email,
                        password: req.body.password,
@@ -35,12 +35,14 @@ app.post("/users",function(req,res){
                        username:req.body.username
                     });
 
-    user.save(function(err){
-        if(err){
-            console.log(String(err));
-        }
-        res.send("recibimos tus datos");
-    });
+user.save().then(function(us){
+    res.send("Guardamos el Usuario Exitosamete");
+},function(err){
+    if(err){
+        console.log(String(err));
+        res.send("No pudimos guardar la informacion");
+    }
+})
     
 });
 
