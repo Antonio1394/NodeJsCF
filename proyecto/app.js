@@ -16,12 +16,15 @@ app.use(bodyParser.json());///para peticiones aplication/Json
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(session({
-    secret:"123yuhbsdah12ub"
+    secret: "123yuhbsdah12ub",
+    resave: false,
+    saveUninitialized: false
 }));
 
 app.set("view engine", "jade");
 
 app.get("/",function(req,res){
+   console.log(req.session.user_id);
    res.render("index");
 });
 
@@ -58,10 +61,10 @@ user.save().then(function(us){
 });
 
 app.post("/sessions",function(req,res){
-    User.findOne({email:req.body.email,password:req.body.password},"",function(err,docs){
-        console.log(docs);
-        res.send("hola mundo");
-    })
+    User.findOne({email:req.body.email,password:req.body.password},"",function(err,user){
+        req.session.user_id=user._id;
+        res.send("hola mundo") 
+    });
 });
 
 
