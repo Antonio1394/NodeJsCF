@@ -50,4 +50,9 @@ user.save().then(function(us){
     
 });
 
+app.post("/sessions",function(req,res){
+    User.find()
+});
+
+
 app.listen(8080);
