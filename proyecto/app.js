@@ -51,7 +51,10 @@ user.save().then(function(us){
 });
 
 app.post("/sessions",function(req,res){
-    User.find()
+    User.findOne({email:req.body.email,password:req.body.password},"",function(err,docs){
+        console.log(docs);
+        res.send("hola mundo");
+    })
 });
 
 
