@@ -71,5 +71,7 @@ app.post("/sessions",function(req,res){
     });
 });
 
+app.use("/app",router_app);
+
 
 app.listen(8080);
