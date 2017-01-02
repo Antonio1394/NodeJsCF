@@ -15,6 +15,9 @@ app.use("/public",express.static('public'));
 app.use(bodyParser.json());///para peticiones aplication/Json
 app.use(bodyParser.urlencoded({extended:true}));
 
+/**app */
+/*/ */
+
 app.use(session({
     secret: "123yuhbsdah12ub",
     resave: false,
