@@ -2,7 +2,7 @@ var express = require("express");
 var bodyParser=require("body-parser");
 var User=require("./models/user").User;
 var session=require("express-session");
-var router_app=require("router_app");
+var router_app=require("./routes_app");
 var session_middelware=require("./middlewares/session");
 
 
@@ -71,7 +71,7 @@ app.post("/sessions",function(req,res){
         res.send("hola mundo") 
     });
 });
-
+app.use("/app",session_middelware);
 app.use("/app",router_app);
 
 
