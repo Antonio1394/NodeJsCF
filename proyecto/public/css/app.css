@@ -4,6 +4,9 @@
 .remove-float{
     float: none;
 }
+.top-space{
+    margin-top: 1.5em;
+}
 .big-top-space{
     margin-top: 300px;
 }
