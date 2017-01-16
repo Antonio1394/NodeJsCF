@@ -9,7 +9,7 @@ router.get("/",function(req,res){
 /* REST */
 
 router.get("/imagenes/new",function(req,res){
-
+    res.render("app/imagenes/new");
 });
 
 router.get("/imagenes/:id/edit",function(req,res){
