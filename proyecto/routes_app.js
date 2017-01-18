@@ -29,7 +29,7 @@ router.route("imagenes/:id")
 
     });
 
-router.route("imagenes/")
+router.route("/imagenes")
     .get(function(req,res){
 
     })
