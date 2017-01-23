@@ -1,19 +1,14 @@
 var express = require("express");
 var bodyParser=require("body-parser");
 var User=require("./models/user").User;
-var session=require("express-session");
+var session=require("cookie-session");
 var router_app=require("./routes_app");
 var session_middelware=require("./middlewares/session");
-
 
 var app=express();
 
 
-
-
-
 app.use("/public",express.static('public'));
-
 app.use(bodyParser.json());///para peticiones aplication/Json
 app.use(bodyParser.urlencoded({extended:true}));
 
