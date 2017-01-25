@@ -1,3 +1,10 @@
 extends ../../layout.jade
 block contenido
-    div Hola Imagenes
+    div(class="container")
+        for imagen in imagenes
+            .white.border.tr.large-padding
+                .row
+                    .col-md-10
+                        h2=imagen.title
+                    .col-md-2
+            

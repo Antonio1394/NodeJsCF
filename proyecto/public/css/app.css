@@ -18,3 +18,31 @@
 .big-top-space-signup{
     margin-top: 200px;
 }
+
+.large-padding{
+    padding: 10px 15px;
+}
+.black{
+    background-color: dimgray;
+}
+.white-text{
+    color: white;
+}
+
+nav{
+    text-align: right;
+}
+
+nav li{
+    display: inline-block;
+    margin-right: 1em;
+    font-size: 1.1em;
+}
+
+nav li a{
+    color: white;
+}
+
+nav li a:hover{
+    color: white;
+}
