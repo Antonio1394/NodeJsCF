@@ -58,3 +58,7 @@ nav li a:hover{
 .tr:nth-of-type(odd){
     background-color: #eee;
 }
+
+div a{
+    display: inline-block;
+}
