@@ -46,3 +46,15 @@ nav li a{
 nav li a:hover{
     color: white;
 }
+
+.white{
+    background-color: white;
+}
+
+.border{
+    border: solid 1px #eee;
+}
+
+.tr:nth-of-type(odd){
+    background-color: #eee;
+}
