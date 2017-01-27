@@ -25,7 +25,16 @@ router.route("/imagenes/:id")
         })
     })
     .put(function(req,res){
-
+        Imagen.findById(req.params.id,function(err,imagen){
+            imagen.title=req.body.title;
+            imagen.save(function(err){
+                if(!err){
+                    res.render("app/imagenes/show",{imagen:imagen});
+                }else{
+                    res.render("app/imagenes/"+imagen.id+"/edit",{imagen:imagen});
+                }
+            })
+        })
     })
     .delete(function(req,res){
 
