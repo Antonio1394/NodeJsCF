@@ -37,7 +37,7 @@ router.route("/imagenes/:id")
         })
     })
     .delete(function(req,res){
-
+        
     });
 
 router.route("/imagenes")

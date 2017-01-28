@@ -59,6 +59,6 @@ nav li a:hover{
     background-color: #eee;
 }
 
-div a{
-    display: inline-block;
+form.link {
+    display: inline-block !important;
 }
