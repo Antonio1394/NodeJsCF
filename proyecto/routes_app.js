@@ -1,5 +1,6 @@
 var express = require("express");
 var Imagen=require("./models/imagenes");
+var Student=require("./models/students");
 var router=express.Router();
 
 router.get("/",function(req,res){
@@ -68,6 +69,15 @@ router.route("/imagenes")
                 res.render(err);
             }
         });
+    });
+
+router.route("/students")
+    .get(function(req,res){
+        res.render("app/students/index");
+    })
+
+    .post(function(){
+
     });
 
 module.exports=router;
