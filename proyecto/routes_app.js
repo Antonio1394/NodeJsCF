@@ -71,6 +71,12 @@ router.route("/imagenes")
         });
     });
 
+ /**RUtas de Students */
+
+ router.get("/students/new",function(req,res){
+     res.render("app/students/new");
+ }); 
+
 router.route("/students")
     .get(function(req,res){
         res.render("app/students/index");
