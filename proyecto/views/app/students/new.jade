@@ -5,14 +5,22 @@ block contenido
         form(action="/app/studets",method="POST")
             div(class="form-group")
                 label(for="title") Nombre
-                input(type="tex", name="name",placeholder="Nombre del Estudiante",id="name",class="form-control")
+                input(type="text", name="name",placeholder="Nombre del Estudiante",id="name",class="form-control")
 
                 label(for="title") Apellido
-                input(type="tex", name="last_name",placeholder="Apellido del Estudiante",id="last_name",class="form-control")
+                input(type="text", name="last_name",placeholder="Apellido del Estudiante",id="last_name",class="form-control")
             
                 label(for="title") Direccion
-                input(type="tex", name="address",placeholder="Direccion del Estudiante",id="address",class="form-control")
+                input(type="text", name="address",placeholder="Direccion del Estudiante",id="address",class="form-control")
+
+                label(for="title") Telefono
+                input(type="number", name="phone",placeholder="Telefono del Estudiante",id="phone",class="form-control")
                 
+                label(for="title") Fecha Nacimiento
+                input(type="date", name="birthdate",placeholder="Fecha de Nacimiento",id="birthdate",class="form-control")
+                
+                label(for="title") Grado
+                input(type="text", name="grade",placeholder="Grado Academico",id="grade",class="form-control")
                 
             
             div(class="row top-space")
