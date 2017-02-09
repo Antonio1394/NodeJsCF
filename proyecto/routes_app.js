@@ -1,5 +1,4 @@
 var express = require("express");
-var swal=require("sweetalert");
 var Imagen=require("./models/imagenes");
 var Student=require("./models/students");
 var router=express.Router();
@@ -12,12 +11,6 @@ router.get("/",function(req,res){
 
 router.get("/imagenes/new",function(req,res){
     res.render("app/imagenes/new");
-    swal({
-  title: "Auto close alert!",
-  text: "I will close in 2 seconds.",
-  timer: 2000,
-  showConfirmButton: false
-});
 });
 
 router.get("/imagenes/:id/edit",function(req,res){
