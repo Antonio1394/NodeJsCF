@@ -1,5 +1,23 @@
 extends ../../layout.jade
 block contenido
-    h1 Estudiantes 
+    div(class="container")
+        h1 Mis Imagenes
+        .white.border.tr.large-padding
+                .row
+                    .col-md-2
+                        p Nombre
+                     .col-md-2
+                        p Apellido
+
+        for student in students
+            .white.border.tr.large-padding  
+                .row
+                    .col-md-2
+                        h4=student.name
+                    .col-md-2
+                        h4=student.last_name    
+
+                    .col-md-3
+                        
         br
         a(href="/app/students/new", class="btn btn-primary") Nuevo Estudiante

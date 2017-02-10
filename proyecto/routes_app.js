@@ -79,7 +79,14 @@ router.route("/imagenes")
 
 router.route("/students")
     .get(function(req,res){
-        res.render("app/students/index");
+        Student.find({},function(err,students){
+            if(err){
+                res.redirect("/app");
+                return;
+            }
+            console.log(students);
+            res.render("app/students/index",{students:students});
+        });
     })
 
     .post(function(req,res){
