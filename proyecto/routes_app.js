@@ -102,7 +102,7 @@ router.route("/students")
         student.save(function(err){
             if(!err){
                 console.log("correcto");
-                res.redirect("app/students");
+                res.redirect("/app/students");
             }else{
                 res.render(err);
             }
