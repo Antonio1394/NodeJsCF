@@ -82,8 +82,24 @@ router.route("/students")
         res.render("app/students/index");
     })
 
-    .post(function(){
-
+    .post(function(req,res){
+        var data={
+            name:req.body.name,
+            last_name:req.body.last_name,
+            address:req.body.address,
+            phone:req.body.phone,
+            date:req.body.date,
+            grade:req.body.grade
+        }
+        var student=new Student(data);
+        student.save(function(err){
+            if(!err){
+                console.log("correcto");
+                res.redirect("app/students");
+            }else{
+                res.render(err);
+            }
+        });
     });
 
 module.exports=router;

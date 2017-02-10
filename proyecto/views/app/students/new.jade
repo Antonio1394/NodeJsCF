@@ -2,7 +2,7 @@ extends ../../layout.jade
 block contenido
     div(class="col-md-6 remove-float center-block big-top-space-students")
         h1 Registro de Estudiantes
-        form(action="/app/studets",method="POST")
+        form(action="/app/students",method="POST")
             div(class="form-group")
                 label(for="title") Nombre
                 input(type="text", name="name",placeholder="Nombre del Estudiante",id="name",class="form-control")
