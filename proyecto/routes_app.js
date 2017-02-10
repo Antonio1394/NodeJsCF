@@ -95,7 +95,7 @@ router.route("/students")
             last_name:req.body.last_name,
             address:req.body.address,
             phone:req.body.phone,
-            date:req.body.date,
+            birthdate:req.body.birthdate,
             grade:req.body.grade
         }
         var student=new Student(data);

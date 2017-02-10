@@ -8,6 +8,14 @@ block contenido
                         p Nombre
                      .col-md-2
                         p Apellido
+                    .col-md-2
+                        p Direccion
+                    .col-md-2
+                        p Telefono
+                    .col-md-2
+                        p Fecha Nacimiento
+                    .col-md-2
+                        p Grado
 
         for student in students
             .white.border.tr.large-padding  
@@ -15,7 +23,16 @@ block contenido
                     .col-md-2
                         h4=student.name
                     .col-md-2
-                        h4=student.last_name    
+                        h4=student.last_name 
+                    .col-md-2
+                        h4=student.address
+                    .col-md-2
+                        h4=student.phone 
+                    .col-md-2
+                        h4=student.birthdate
+                    .col-md-2
+                        h4=student.grade
+
 
                     .col-md-3
                         
