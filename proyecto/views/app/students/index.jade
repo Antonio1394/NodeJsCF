@@ -2,6 +2,14 @@ extends ../../layout.jade
 block contenido
     div(class="container")
         h1 Mis Imagenes
+        table(class="table-bordered")
+            thead
+                tr
+                    th Nombre
+            tbody
+            for student in students
+                tr
+                    td=student.name
         .white.border.tr.large-padding
                 .row
                     .col-md-2
@@ -32,7 +40,6 @@ block contenido
                         h4=student.birthdate
                     .col-md-2
                         h4=student.grade
-
 
                     .col-md-3
                         
