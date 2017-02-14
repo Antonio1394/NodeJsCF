@@ -8,12 +8,15 @@ block contenido
                     th Nombre
                     th Apellido
                     th Direccion
+                    th Telefono
+                    th Fecha Nac.
             tbody
                 for student in students
                     tr
                         td=student.name
                         td=student.last_name
                         td=student.address
-                       
+                        td=student.phone
+                        td=student.birthdate
         br
         a(href="/app/students/new", class="btn btn-primary") Nuevo Estudiante
