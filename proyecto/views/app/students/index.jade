@@ -9,7 +9,8 @@ block contenido
                     th Apellido
                     th Direccion
                     th Telefono
-                    th Fecha Nacimiento.
+                    th Fecha Nacimiento
+                    th Acciones
             tbody
                 for student in students
                     tr
@@ -18,5 +19,9 @@ block contenido
                         td=student.address
                         td=student.phone
                         td=student.birthdate
+                        td 
+                            a(href="/app/students/new", class="btn btn-warning right-space") Editar
+
+                            a(href="/app/students/new", class="btn btn-danger") Eliminar
         br
         a(href="/app/students/new", class="btn btn-primary") Nuevo Estudiante
