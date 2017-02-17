@@ -18,28 +18,22 @@ router.get("/imagenes/new",function(req,res){
 router.all("/imagenes/:id*",image_finder_middleware);
 
 router.get("/imagenes/:id/edit",function(req,res){
-     Imagen.findById(req.params.id,function(err,imagen){
-            res.render("app/imagenes/edit",{imagen:imagen});
-        })
+     res.render("app/imagenes/edit");
 });
 
 router.route("/imagenes/:id")
     .get(function(req,res){
-        Imagen.findById(req.params.id,function(err,imagen){
-            res.render("app/imagenes/show",{imagen:imagen});
-        })
+        res.render("app/imagenes/show");
     })
     .put(function(req,res){
-        Imagen.findById(req.params.id,function(err,imagen){
-            imagen.title=req.body.title;
-            imagen.save(function(err){
+       res.locals.imagen.title=req.body.title;
+       res.locals.imagen.save(function(err){
                 if(!err){
-                    res.render("app/imagenes/show",{imagen:imagen});
+                    res.render("app/imagenes/show");
                 }else{
-                    res.render("app/imagenes/"+imagen.id+"/edit",{imagen:imagen});
+                    res.render("app/imagenes/"+req.params.id+"/edit");
                 }
             })
-        })
     })
     .delete(function(req,res){
         Imagen.findOneAndRemove({_id:req.params.id},function(err){
