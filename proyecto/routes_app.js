@@ -3,6 +3,8 @@ var Imagen=require("./models/imagenes");
 var Student=require("./models/students");
 var router=express.Router();
 
+var image_finder_middleware=require("./middlewares/find_image");
+
 router.get("/",function(req,res){
     res.render("app/home")
 });
@@ -12,6 +14,8 @@ router.get("/",function(req,res){
 router.get("/imagenes/new",function(req,res){
     res.render("app/imagenes/new");
 });
+
+router.all("/imagenes/:id*",image_finder_middleware);
 
 router.get("/imagenes/:id/edit",function(req,res){
      Imagen.findById(req.params.id,function(err,imagen){
