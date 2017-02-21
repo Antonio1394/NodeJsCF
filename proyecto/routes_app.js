@@ -55,7 +55,8 @@ router.route("/imagenes")
     })
     .post(function(req,res){
         var data={
-            title:req.body.title
+            title:req.body.title,
+            creator: res.locals.user._id
         }
         var imagen=new Imagen(data);
         imagen.save(function(err){
