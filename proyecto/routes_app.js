@@ -54,6 +54,7 @@ router.route("/imagenes")
         });
     })
     .post(function(req,res){
+        console.log(req.body.archivo);
         var data={
             title:req.body.title,
             creator: res.locals.user._id
