@@ -1,6 +1,7 @@
 var express = require("express");
 var Imagen=require("./models/imagenes");
 var Student=require("./models/students");
+var fs=require("fs");
 var router=express.Router();
 
 var image_finder_middleware=require("./middlewares/find_image");
@@ -62,6 +63,7 @@ router.route("/imagenes")
         var imagen=new Imagen(data);
         imagen.save(function(err){
             if(!err){
+                fs.rename(req.body.archivo.path,"public/imageness");
                 console.log("correcto");
                 res.redirect("/app/imagenes/"+imagen._id);
             }
