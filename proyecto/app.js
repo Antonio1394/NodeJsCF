@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 /**app */
 /*/ */
+app.use(formidable.parse({ keepExtensions:true }));
 
 app.use(methodOverride("_method"))
 app.use(cookieSession({
@@ -23,7 +24,7 @@ app.use(cookieSession({
     keys:["llave-1","llave-2"]
 }));
 
-app.use(formidable.parse({ keepExtensions:true }));
+
 
 app.set("view engine", "jade");
 
